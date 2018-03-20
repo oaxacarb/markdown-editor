@@ -47,6 +47,7 @@
         </div>
 
         <script src="https://unpkg.com/vue"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js"></script>
         <script>
             let Preview = {
                 props: ['text'],
@@ -57,7 +58,7 @@
                 `,
                 computed: {
                     markdownText() {
-                        return this.text + " Markdown"
+                        return marked(this.text, { sanitize: true })
                     }
                 }
             }
