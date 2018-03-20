@@ -49,9 +49,10 @@
         <script src="https://unpkg.com/vue"></script>
         <script>
             let Preview = {
+                props: ['text'],
                 template: `
                     <div class="editor__preview">
-                        Preview
+                        {{ text }}
                     </div>
                 `
             }
@@ -68,7 +69,7 @@
                 template: `
                     <div class="editor">
                         <textarea v-model="text" rows="10" cols="30" class="editor__input"></textarea>
-                        <preview></preview>
+                        <preview :text="text"></preview>
                     </div>
                 `
             }
